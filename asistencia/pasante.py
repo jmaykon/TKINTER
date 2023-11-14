@@ -66,6 +66,13 @@ class Pasante:
         datos = cur.fetchone()
         cur.close()
         return datos
+    def buscar_pasante_receso(self, ci): #id
+        cur = self.cnn.cursor()
+        sql = "select * from receso where ci = {}".format(ci)
+        cur.execute(sql)
+        datos = cur.fetchone()
+        cur.close()
+        return datos
     def registra_pasante(self, ci, nombre, apPat, apMat , carrera, area, cel, tcontrato, fechaini, fechafin, turno, gestion):
         cur = self.cnn.cursor()
         sql = '''INSERT INTO pasante (ci, nombre, appaterno, apmaterno, carrera, area, cel, tcontrato, fechaini, fechafin, turno, gestion)

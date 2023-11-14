@@ -1,4 +1,5 @@
-
+from Licencia import Licencia
+from Password import Password
 from registroPas import *
 from reporte import Reporte
 
@@ -36,6 +37,14 @@ class Menu(Frame):  # Herencia Frame <-- Ventana
         self.btnReporte = Button(frame1, text="Reporte", command=self.fReporte, bg='#063374', fg="white", bd=4)  # fNuevo
         self.btnReporte.place(x=130, y=250, width=150, height=30)
 
+        #BTN PEDIR PERMISO
+        self.btnPermiso = Button(frame1, text="Pedir Licencia", command=self.fpedirpermiso, bg="red",fg="white", bd=4)  # fNuevo
+        self.btnPermiso.place(x=130, y=320, width=150, height=30)
+
+        #btn cambiar contraseña
+        self.btnPassword = Button(frame1, text="Cambiar Contraseña", command=self.fcambiarPass, bg='#063374', fg="white",bd=4)  # fNuevo
+        self.btnPassword.place(x=130, y=380, width=150, height=30)
+
         self.btnAtras = Button(frame1, text="<-- Atras", command=self.fAtras, bg="gray", fg="white")
         self.btnAtras.place(x=0, y=0)
 
@@ -55,8 +64,23 @@ class Menu(Frame):  # Herencia Frame <-- Ventana
         root = Tk()
         root.wm_title("Reporte")
 
-        root.geometry('1345x675+0+0')
+        root.geometry('1145x475+0+0')
         app = Reporte(root)
         app.mainloop()
 
+    def fcambiarPass(self):
+        self.master.destroy()
+        root = Tk()
+        root.wm_title("Contraseña")
+        root.geometry('400x500+620+30')
+        app = Password(root)
+        app.mainloop()
+
+    def fpedirpermiso(self):
+        self.master.destroy()
+        root = Tk()
+        root.wm_title("Licencia")
+        root.geometry('400x500+620+30')
+        app = Licencia(root)
+        app.mainloop()
 

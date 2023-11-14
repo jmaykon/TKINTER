@@ -14,7 +14,7 @@ def mostrar_login():
     app.mainloop()
 
 
-def mostrar_login2():
+def mostrar_login2() -> object:
     ventana2 = Tk()
     ventana2.config(bg='gray63')
     ventana2.geometry('350x800+500+50')

@@ -197,8 +197,8 @@ class Registro(Frame):  # Herencia Frame <-- Ventana
         frame1.place(x=0, y=0, width=340, height=670)
 
         #fondo de registro del personal
-        self.t = PhotoImage(file='fondoRegistros.png')  # FONDO DENTRO DEL FRAME
-        Label(frame1, image=self.t).place(x=-75, y=0)
+        #self.t = PhotoImage(file='fondoRegistros.png')  # FONDO DENTRO DEL FRAME
+        #Label(frame1, image=self.t).place(x=-75, y=0)
 
         self.titulo = Label(frame1, text="REGISTRO DEL PERSONAL", font=25)
         self.titulo.place(x=55, y=30)
@@ -298,32 +298,33 @@ class Registro(Frame):  # Herencia Frame <-- Ventana
         self.btnRefrescar = Button(frame2, text="ACTUALIZAR", command=self.fRefrescar, width=15, bg="green", fg="white")
         self.btnRefrescar.place(x=20, y=45)
 
-        self.btnOrdenar1 = Button(frame2, text="Ordenar por:", command=self.fOrdenar_por_Area, width=10, bg="red", fg="white")
-        self.btnOrdenar1.place(x=150, y=45)
-        self.var = StringVar(frame2)
-        self.var.set('AREA')
-        opciones = ['NINGUNO', 'PRENSA', 'ESTUDIO', 'PRODUCCION']
-        opcion = OptionMenu(frame2, self.var, *opciones)
-        opcion.config(width=10)
-        opcion.place(x=240, y=45)
+        #self.btnOrdenar1 = Button(frame2, text="Ordenar por:", command=self.fOrdenar_por_Area, width=10, bg="red", fg="white")
+        #self.btnOrdenar1.place(x=150, y=45)
+        #self.var = StringVar(frame2)
+        #self.var.set('AREA')
+        #opciones = ['NINGUNO', 'PRENSA', 'ESTUDIO', 'PRODUCCION']
+        #opcion = OptionMenu(frame2, self.var, *opciones)
+        #opcion.config(width=10)
+        #opcion.place(x=240, y=45)
 
-        self.btnOrdenar2 = Button(frame2, text="Ordenar por:", command=self.fOrdenar_por_Carrera, width=10, bg="red", fg="white")
-        self.btnOrdenar2.place(x=380, y=45)
-        self.var2 = StringVar(frame2)
-        self.var2.set('CARRERA')
-        opciones2 = ['NINGUNO', 'INFORMATICA', 'COMUNICACION SOCIAL']
-        opcion2 = OptionMenu(frame2, self.var2, *opciones2)
-        opcion2.config(width=15)
-        opcion2.place(x=480, y=45)
+        #self.btnOrdenar2 = Button(frame2, text="Ordenar por:", command=self.fOrdenar_por_Carrera, width=10, bg="red", fg="white")
+        #self.btnOrdenar2.place(x=380, y=45)
+        #self.var2 = StringVar(frame2)
+        #self.var2.set('CARRERA')
+        #opciones2 = ['NINGUNO', 'INFORMATICA', 'COMUNICACION SOCIAL']
+        #opcion2 = OptionMenu(frame2, self.var2, *opciones2)
+        #opcion2.config(width=15)
+        #opcion2.place(x=480, y=45)
 
-        self.btnOrdenar3 = Button(frame2, text="Ordenar por:", command=self.fOrdenar_por_Contrato, width=15, bg="red", fg="white")
-        self.btnOrdenar3.place(x=650, y=45)
-        self.var3 = StringVar(frame2)
-        self.var3.set('T.CONTRATO')
-        opciones3 = ['PASANTE', 'CONTRATO']
-        opcion3 = OptionMenu(frame2, self.var3, *opciones3)
-        opcion3.config(width=10)
-        opcion3.place(x=750, y=45)
+        #self.btnOrdenar3 = Button(frame2, text="Ordenar por:", command=self.fOrdenar_por_Contrato, width=15, bg="red", fg="white")
+        #self.btnOrdenar3.place(x=650, y=45)
+        #self.var3 = StringVar(frame2)
+        #self.var3.set('T.CONTRATO')
+
+        #opciones3 = ['PASANTE', 'CONTRATO']
+        #opcion3 = OptionMenu(frame2, self.var3, *opciones3)
+        #opcion3.config(width=10)
+        #opcion3.place(x=750, y=45)
 
         self.btnOrdenar4 = Button(frame2, text="Ordenar por:", command=self.fOrdenar_por_Turno, width=10, bg="red",
                                   fg="white")
@@ -340,7 +341,7 @@ class Registro(Frame):  # Herencia Frame <-- Ventana
         self.btnOrdenar5.place(x=465, y=95)
         self.var5 = StringVar(frame2)
         self.var5.set('GESTION')
-        opciones5 = ['2022', '2023', '2024', '2025', '2026', '2027', '2028', '2029',
+        opciones5 = ['2023', '2024', '2025', '2026', '2027', '2028', '2029',
                      '2030']  # agregar mas gestiones
         opcion5 = OptionMenu(frame2, self.var5, *opciones5)
         opcion5.config(width=10)

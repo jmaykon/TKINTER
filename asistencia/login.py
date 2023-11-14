@@ -31,8 +31,9 @@ class Login(Frame):
         main.mostrar_login2()
 
     def widgets(self):
-        Label(self.master, text='UNIDAD DE GENERACIÓN', bg='#a2b6d0', fg='black', font=('Lucida Sans', 16, 'bold')).pack(pady=5)
-        Label(self.master, text='DE CONTENIDOS', bg='#a2b6d0', fg='black',font=('Lucida Sans', 16, 'bold')).pack(pady=5)
+        Label(self.master, text='UNIDAD DE COMUNICACIÓN', bg='#a2b6d0', fg='black', font=('Lucida Sans', 16, 'bold')).pack(pady=5)
+        Label(self.master, text='SOCIAL Y GENERACIÓN DE', bg='#a2b6d0', fg='black',font=('Lucida Sans', 16, 'bold')).pack(pady=5)
+        Label(self.master, text='CONTENIDOS CULTURALES', bg='#a2b6d0', fg='black',font=('Lucida Sans', 16, 'bold')).pack(pady=5)
         Label(self.master, text='MCDyD', bg='#a2b6d0', fg='black', font=('Lucida Sans', 16, 'bold')).pack(pady=5)
 
         self.entry1 = Entry(self.master, font=('Comic Sans MS', 12), justify='center', fg='grey',

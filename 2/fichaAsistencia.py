@@ -3,8 +3,6 @@ import datetime
 from tkinter import *
 from tkinter import ttk, messagebox
 import main
-import functools
-import operator
 #from login import * #Ventana
 from asistencia import *
 from pasante import *

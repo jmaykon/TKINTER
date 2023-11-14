@@ -454,21 +454,23 @@ class CAsistencia(Frame):  # Herencia Frame <-- Ventana
     def fbuscarCi(self):
         if self.cajaTxt_ci.get() != "":
             self.swBB = 1
-            try:
-                datosP = self.p1.buscar_pasante(self.cajaTxt_ci.get())
-                messagebox.showinfo("Buscar", "Pasante Encontrado: " + datosP[2] + ", " + datosP[3] + ", " + datosP[4])
-                self.habilitarCaja('normal')
-                self.limpiarCaja()
-                self.cajaTxt_ci.insert(0, datosP[1])
-                self.cajaTxt_nom.insert(0, datosP[2])
-                self.cajaTxt_ap_pat.insert(0, datosP[3])
-                self.cajaTxt_ap_mat.insert(0, datosP[4])
-                self.cajaTxt_carrera.insert(0, datosP[5])
-                self.cajaTxt_area.insert(0, datosP[6])
-                self.cajaTxt_turno.insert(0, datosP[10])
-                self.habilitarCaja('disabled')
-            except:
-                messagebox.showwarning("No Encontrado", "El Pasante No Esta Registrado")
+
+            dts = self.p1.buscar_pasante(self.cajaTxt_ci.get())
+            datosP=""
+            datosP=dts
+            print(datosP)
+            messagebox.showinfo("Buscar", "Pasante Encontrado: " + datosP[2] + ", " + datosP[3] + ", " + datosP[4])
+            self.habilitarCaja('normal')
+            self.limpiarCaja()
+            self.cajaTxt_ci.insert(0, datosP[1])
+            self.cajaTxt_nom.insert(0, datosP[2])
+            self.cajaTxt_ap_pat.insert(0, datosP[3])
+            self.cajaTxt_ap_mat.insert(0, datosP[4])
+            self.cajaTxt_carrera.insert(0, datosP[5])
+            self.cajaTxt_area.insert(0, datosP[6])
+            self.cajaTxt_turno.insert(0, datosP[10])
+            self.habilitarCaja('disabled')
+
             try:
                 datosCA = self.a1.buscar_asistencia_nomFe(self.cajaTxt_ci.get(), self.hoy)
                 datosRE = self.a2.buscar_asistencia_nomFe(self.cajaTxt_ci.get(), self.hoy)

@@ -44,8 +44,8 @@ class CAsistencia(Frame):  # Herencia Frame <-- Ventana
         frame1.place(x=0, y=0, width=940, height=450)
 
         #IMG
-        #self.re = PhotoImage(file='registroPasantefondo.png')  # FONDO DENTRO DEL FRAME
-        #Label(frame1, image=self.re).place(x=70, y=50)  # LA POCISION DE LA IAMGEN DENTRO DEL FRAME
+        self.re = PhotoImage(file='registroPasantefondo.png')  # FONDO DENTRO DEL FRAME
+        Label(frame1, image=self.re).place(x=70, y=50)  # LA POCISION DE LA IAMGEN DENTRO DEL FRAME
 
 
         self.titulo = Label(frame1, text="CONTROL DE ASISTENCIA", font=("Arial Black", 15), fg="black", bg="orange")

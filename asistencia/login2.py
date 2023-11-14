@@ -1,7 +1,6 @@
 # Login  verificacion de datos
 # No se considero inyecion por SQL u otros metodos de ingreso.
-
-
+import hashlib
 from tkinter import Tk, Button, Entry, Label, ttk, PhotoImage, Menu
 from tkinter import StringVar, END, HORIZONTAL, Frame, Toplevel
 import time
@@ -96,6 +95,10 @@ class Login2(Frame):
         users_entry = self.entry1.get()
         password_entry = self.entry2.get()
 
+        passcifrado = hashlib.sha256(password_entry.encode()).hexdigest()
+
+        password_entry = passcifrado
+
         if users_entry != self.user_marcar or self.contra_marcar != password_entry:
             users_entry = str("'" + users_entry + "'")
             password_entry = str("'" + password_entry + "'")
@@ -132,16 +135,20 @@ class Login2(Frame):
 
 
     def widgets(self):
-        Label(self.master, text='UNIDAD DE GENERACIÓN', bg='#a2b6d0', fg='black', font=('Lucida Sans', 16, 'bold')).pack(pady=5)
-        Label(self.master, text='DE CONTENIDOS', bg='#a2b6d0', fg='black', font=('Lucida Sans', 16, 'bold')).pack(pady=5)
-        Label(self.master, text='MCDyD', bg='#a2b6d0', fg='black',font=('Lucida Sans', 16, 'bold')).pack(pady=5)
+        Label(self.master, text='UNIDAD DE COMUNICACIÓN', bg='#a2b6d0', fg='black',
+              font=('Lucida Sans', 16, 'bold')).pack(pady=5)
+        Label(self.master, text='SOCIAL Y GENERACIÓN DE', bg='#a2b6d0', fg='black',
+              font=('Lucida Sans', 16, 'bold')).pack(pady=5)
+        Label(self.master, text='CONTENIDOS CULTURALES', bg='#a2b6d0', fg='black',
+              font=('Lucida Sans', 16, 'bold')).pack(pady=5)
+        Label(self.master, text='MCDyD', bg='#a2b6d0', fg='black', font=('Lucida Sans', 16, 'bold')).pack(pady=5)
 
 
 
 
 
         # *****IMG LOGIN 1
-        self.tvu = PhotoImage(file='img/LOGO1.png')
+        self.tvu = PhotoImage(file='img/LOGO11.png')
         Label(self.master, image=self.tvu, height=200, width=200, pady=20).pack()
         #*****
 

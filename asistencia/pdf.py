@@ -21,7 +21,6 @@ class PDF:
             cur.execute(sql)
             datos = cur.fetchone()
             cur.close()
-
         return datos
 
     def registra_pasante(self, ci, nombre, apPat, apMat, carrera, area, cel, fechaini, fechafin, turno, gestion):
@@ -69,6 +68,13 @@ class PDF:
         datos = cur.fetchall()#
         cur.close()
         return datos
+    def buscar_receso(self, cip):  # id
+        cur = self.cnn.cursor()
+        sql = "select * from receso where cip = {}".format(cip)
+        cur.execute(sql)
+        datos = cur.fetchall()#
+        cur.close()
+        return datos
     def buscar_HoraDia(self, cip): #id
         cur = self.cnn.cursor()
         sql = "SELECT hora_dia FROM asistencia WHERE cip = {}".format(cip)
@@ -76,6 +82,14 @@ class PDF:
         datos = cur.fetchall()
         cur.close()
         return datos
+    def buscar_HoraDiareceso(self, cip): #id
+        cur = self.cnn.cursor()
+        sql = "SELECT hora_dia FROM receso WHERE cip = {}".format(cip)
+        cur.execute(sql)
+        datos = cur.fetchall()
+        cur.close()
+        return datos
+
 
     def registra_asistencia(self, cip, hora_e, hora_s, hora_dia, fecha_a):
         cur = self.cnn.cursor()
